@@ -2,19 +2,13 @@
 @section('title','全部審查結果 | ')
 @section('content')
     <h1>
-        {{ auth()->user()->school }}：全部課程審查
+    {{ $select_year }}{{ auth()->user()->school }}：全部課程審查
     </h1>
     <table class="table table-striped">
         <thead class="thead-light">
         <tr>
             <th>
-                一傳
-            </th>
-            <th>
-                二傳
-            </th>
-            <th>
-                三傳
+                審核
             </th>
         </tr>
         </thead>
@@ -42,56 +36,6 @@
                 評審意見：<br>
                 <span class="text-primary">
                     {!! nl2br($course->first_reason1) !!}
-                </span>
-                @endif
-            </td>
-            <td>
-                結果：
-                @if($course->first_result2==null and $course->first_result1=="back")
-                    <span class="text-warning">未送審</span>
-                @endif
-                @if($course->first_result2=="submit")
-                    <span>已送審</span>
-                @endif
-                @if($course->first_result2=="ok")
-                    <span class="text-info">已通過</span>
-                @endif
-                @if($course->first_result2=="back")
-                    <span class="text-danger">被退回</span>
-                @endif
-                @if($course->first_result2=="excellent")
-                    <span class="text-success">進入複審</span>
-                @endif
-                <br>
-                @if($course->first_reason2)
-                評審意見：<br>
-                <span class="text-primary">
-                    {!! nl2br($course->first_reason2) !!}
-                </span>
-                @endif
-            </td>
-            <td>
-                結果：
-                @if($course->first_result3==null and $course->first_result2=="back")
-                    <span class="text-warning">未送審</span>
-                @endif
-                @if($course->first_result3=="submit")
-                    <span>已送審</span>
-                @endif
-                @if($course->first_result3=="ok")
-                    <span class="text-info">已通過</span>
-                @endif
-                @if($course->first_result3=="back")
-                    <span class="text-danger">被退回</span>
-                @endif
-                @if($course->first_result3=="excellent")
-                    <span class="text-success">進入複審</span>
-                @endif
-                <br>
-                @if($course->first_reason3)
-                評審意見：<br>
-                <span class="text-primary">
-                    {!! nl2br($course->first_reason3) !!}
                 </span>
                 @endif
             </td>
@@ -177,48 +121,16 @@
                     @if($question->type != 0)
                         @if($suggest1)
                             @if($suggest1->pass=="1")
-                                一傳：<br>
+                                審核：<br>
                                 <span class="text-success">符合！</span>
                             @endif
                             @if($suggest1->pass=="0")
-                                一傳：<br>
+                                    審核：<br>
                                 <span class="text-danger">不符合！</span>
                             @endif
                         @else
-                            一傳：<br>
+                            審核：<br>
                             <span class="text-warning">未審！</span>
-                        @endif
-                        <br>
-                        @if($suggest2)
-                            @if($suggest2->pass=="1")
-                                二傳：<br>
-                                <span class="text-success">符合！</span>
-                            @endif
-                            @if($suggest2->pass=="0")
-                                二傳：<br>
-                                <span class="text-danger">不符合！</span>
-                            @endif
-                        @else
-                            @if($suggest1->pass !="1")
-                            二傳：<br>
-                            <span class="text-warning">未審！</span>
-                            @endif
-                        @endif
-                        <br>
-                        @if($suggest3)
-                            @if($suggest3->pass=="1")
-                                三傳：<br>
-                                <span class="text-success">符合！</span>
-                            @endif
-                            @if($suggest3->pass=="0")
-                                三傳：<br>
-                                <span class="text-danger">不符合！</span>
-                            @endif
-                        @else
-                            @if($suggest2->pass !="1")
-                            三傳：<br>
-                            <span class="text-warning">未審！</span>
-                            @endif
                         @endif
                     @endif
                 </td>
@@ -226,30 +138,13 @@
                     @if($question->type != 0)
                         @if($suggest1)
                             @if($suggest1->suggest)
-                            一傳：<br>
+                            審核：<br>
                             <span class="text-primary">
                                 {!! nl2br($suggest1->suggest) !!}
                             </span>
                             @endif
                         @endif
                         <br>
-                        @if($suggest2)
-                            @if($suggest2->suggest)
-                            二傳：<br>
-                            <span class="text-primary">
-                                {!! nl2br($suggest2->suggest) !!}
-                            </span>
-                            @endif
-                        @endif
-                        <br>
-                        @if($suggest3)
-                            @if($suggest3->suggest)
-                            三傳：<br>
-                            <span class="text-primary">
-                                {!! nl2br($suggest3->suggest) !!}
-                            </span>
-                            @endif
-                        @endif
                     @endif
                 </td>
             </tr>

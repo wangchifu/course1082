@@ -158,7 +158,7 @@
                         <tr>
                             <td>
                                 <div class="form-group">
-                                    <label for="step2_date1">階段2：初審作業開始日</label>
+                                    <label for="step2_date1">階段2：審核作業開始日</label>
                                     <input id="step2_date1" width="276" name="step2_date1" required maxlength="10" value="{{ old('step2_date1') }}">
                                     <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
                                     <script>
@@ -172,7 +172,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <label for="step2_date2">階段2：初審作業結束日</label>
+                                    <label for="step2_date2">階段2：審核作業結束日</label>
                                     <input id="step2_date2" width="276" name="step2_date2" required maxlength="10" value="{{ old('step2_date2') }}">
                                     <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
                                     <script>
@@ -188,109 +188,11 @@
 
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    <label for="step2_1_date1">階段2-1：依初審意見修正，再次上傳開始日</label>
-                                    <input id="step2_1_date1" width="276" name="step2_1_date1" required maxlength="10" value="{{ old('step2_1_date1') }}">
-                                    <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
-                                    <script>
-                                        $('#step2_1_date1').datepicker({
-                                            uiLibrary: 'bootstrap4',
-                                            format: 'yyyy-mm-dd',
-                                            locale: 'zh-TW',
-                                        });
-                                    </script>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <label for="step2_1_date2">階段2-1：依初審意見修正，再次上傳結束日</label>
-                                    <input id="step2_1_date2" width="276" name="step2_1_date2" required maxlength="10" value="{{ old('step2_1_date2') }}">
-                                    <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
-                                    <script>
-                                        $('#step2_1_date2').datepicker({
-                                            uiLibrary: 'bootstrap4',
-                                            format: 'yyyy-mm-dd',
-                                            locale: 'zh-TW',
-                                        });
-                                    </script>
-                                </div>
-                            </td>
-                            <td>
 
-                            </td>
-                        </tr>
                         <tr>
                             <td>
                                 <div class="form-group">
-                                    <label for="step2_2_date1">階段2-2：初審未通過，第三次上傳開始日</label>
-                                    <input id="step2_2_date1" width="276" name="step2_2_date1" required maxlength="10" value="{{ old('step2_2_date1') }}">
-                                    <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
-                                    <script>
-                                        $('#step2_2_date1').datepicker({
-                                            uiLibrary: 'bootstrap4',
-                                            format: 'yyyy-mm-dd',
-                                            locale: 'zh-TW',
-                                        });
-                                    </script>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <label for="step2_2_date2">階段2-2：初審未通過，第三次上傳結束日</label>
-                                    <input id="step2_2_date2" width="276" name="step2_2_date2" required maxlength="10" value="{{ old('step2_2_date2') }}">
-                                    <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
-                                    <script>
-                                        $('#step2_2_date2').datepicker({
-                                            uiLibrary: 'bootstrap4',
-                                            format: 'yyyy-mm-dd',
-                                            locale: 'zh-TW',
-                                        });
-                                    </script>
-                                </div>
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    <label for="step3_date1">階段3：複審作業開始日</label>
-                                    <input id="step3_date1" width="276" name="step3_date1" required maxlength="10" value="{{ old('step3_date1') }}">
-                                    <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
-                                    <script>
-                                        $('#step3_date1').datepicker({
-                                            uiLibrary: 'bootstrap4',
-                                            format: 'yyyy-mm-dd',
-                                            locale: 'zh-TW',
-                                        });
-                                    </script>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="form-group">
-                                    <label for="step3_date2">階段3：複審作業結束日</label>
-                                    <input id="step3_date2" width="276" name="step3_date2" required maxlength="10" value="{{ old('step3_date2') }}">
-                                    <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
-                                    <script>
-                                        $('#step3_date2').datepicker({
-                                            uiLibrary: 'bootstrap4',
-                                            format: 'yyyy-mm-dd',
-                                            locale: 'zh-TW',
-                                        });
-                                    </script>
-                                </div>
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    <label for="step4_date1">階段4：開放查詢訂開始日</label>
+                                    <label for="step4_date1">開放查詢開始日</label>
                                     <input id="step4_date1" width="276" name="step4_date1" required maxlength="10" value="{{ old('step4_date1') }}">
                                     <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
                                     <script>
@@ -304,7 +206,7 @@
                             </td>
                             <td>
                                 <div class="form-group">
-                                    <label for="step4_date2">階段4：開放查詢訂結束日</label>
+                                    <label for="step4_date2">開放查詢結束日</label>
                                     <input id="step4_date2" width="276" name="step4_date2" required maxlength="10" value="{{ old('step4_date2') }}">
                                     <script src="{{ asset('gijgo/js/messages/messages.zh-TW.js') }}"></script>
                                     <script>

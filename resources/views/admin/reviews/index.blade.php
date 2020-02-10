@@ -25,7 +25,7 @@
                                 選擇年度：
                             </td>
                             <td>
-                                {{ Form::open(['route'=>'questions.index','method'=>'post']) }}
+                                {{ Form::open(['route'=>'reviews.index','method'=>'post']) }}
                                 {{ Form::select('year',$year_items,$select_year,['onchange'=>'submit()']) }}
                                 {{ Form::close() }}
                             </td>
@@ -33,8 +33,10 @@
                     </table>
                 </div>
                 <div class="card-body">
-                    <a href="javascript:open_window2('{{ route('reviews.first_by_user',['select_year'=>$select_year]) }}','新視窗')" class="btn btn-info btn-sm"><i class="fas fa-user"></i> 依初委選學校</a>
+                    <a href="javascript:open_window2('{{ route('reviews.first_by_user',['select_year'=>$select_year]) }}','新視窗')" class="btn btn-info btn-sm"><i class="fas fa-user"></i> 依普教委員選學校</a>
+                    <!--
                     <a href="javascript:open_window2('{{ route('reviews.second_by_user',['select_year'=>$select_year]) }}','新視窗')" class="btn btn-info btn-sm"><i class="far fa-user"></i> 依複委選學校</a>
+                    -->
                     <a href="{{ route('reviews.open',$select_year) }}" class="btn btn-success btn-sm" onclick="return confirm('確定全部公開？')"><i class="fas fa-share"></i> 全部公開</a>
                     <a href="{{ route('reviews.close',$select_year) }}" class="btn btn-danger btn-sm" onclick="return confirm('確定全部關閉？')"><i class="fas fa-times-circle"></i> 全部關閉</a>
                     <table border="1" width="100%" class="table-striped">
@@ -44,11 +46,12 @@
                                 校名
                             </th>
                             <th nowrap>
-                                初審<br>委員
+                                評審<br>委員
                             </th>
                             <th nowrap style="background-color:#fff8d7">
-                                初審<br>狀況<br><a href="{{ route('reviews.not_send',['result'=>'1','select_year'=>$select_year]) }}" class="badge badge-danger" target="_blank">未送名單</a>
+                                評審<br>狀況<br><a href="{{ route('reviews.not_send',['result'=>'1','select_year'=>$select_year]) }}" class="badge badge-danger" target="_blank">未送名單</a>
                             </th>
+                            <!--
                             <th style="background-color:#fff8d7">
                                 再傳<br>狀況<br><a href="{{ route('reviews.not_send',['result'=>'2','select_year'=>$select_year]) }}" class="badge badge-danger" target="_blank">未送名單</a>
                             </th>
@@ -61,6 +64,7 @@
                             <th nowrap style="background-color: #ffd2d2">
                                 複審<br>結果
                             </th>
+                            -->
                             <th nowrap style="background-color: #ceffce">
                                 公開
                             </th>
@@ -104,6 +108,7 @@
                                         <span class="text-success">進入複審</span>
                                     @endif
                                 </td>
+                                <!--
                                 <td>
                                     @if($course->first_result2==null and $course->first_result1=="back")
                                         <span class="text-dark">未送審</span>
@@ -167,6 +172,7 @@
                                         <span class="text-success">3.甲等</span>
                                     @endif
                                 </td>
+                                -->
                                 <td>
                                     @if($open[$course->school_code])
                                         是 <small><a href="{{ route('reviews.select_close',['select_year'=>$select_year,'school_code'=>$course->school_code]) }}" onclick="return confirm('確定關閉？')"><i class="fas fa-times-circle text-danger"></i></a></small>

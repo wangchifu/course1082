@@ -125,9 +125,9 @@ class SchoolController extends Controller
     public function edit($select_year)
     {
         //非可編輯日期期限即返回
-        if(!check_date($select_year,'1') and !check_date($select_year,'2_1') and !check_date($select_year,'2_2')){
-            return back();
-        }
+        //if(!check_date($select_year,'1') and !check_date($select_year,'2_1') and !check_date($select_year,'2_2')){
+        //    return back();
+        //}
 
         $year = Year::where('year',$select_year)->first();
 
@@ -1079,6 +1079,7 @@ class SchoolController extends Controller
             ->get();
         $data = [
             'special_questions'=>$special_questions,
+            'select_year'=>$select_year,
         ];
         return view('school.show_special',$data);
     }
@@ -1092,6 +1093,7 @@ class SchoolController extends Controller
             ->orderBy('order_by')
             ->get();
         $data = [
+            'select_year'=>$select_year,
             'questions'=>$questions,
             'course'=>$course,
         ];

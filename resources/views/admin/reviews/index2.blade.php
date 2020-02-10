@@ -25,7 +25,7 @@
                                 選擇年度：
                             </td>
                             <td>
-                                {{ Form::open(['route'=>'questions.index','method'=>'post']) }}
+                                {{ Form::open(['route'=>'reviews.index2','method'=>'post']) }}
                                 {{ Form::select('year',$year_items,$select_year,['onchange'=>'submit()']) }}
                                 {{ Form::close() }}
                             </td>

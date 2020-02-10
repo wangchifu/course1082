@@ -2,7 +2,7 @@
 @section('title','特教審查 | ')
 @section('content')
     <h1>
-        {{ auth()->user()->school }}：特教課程審查
+        {{ $select_year }}{{ auth()->user()->school }}：特教課程審查
     </h1>
 <table class="table table-striped">
     <thead class="thead-light">
