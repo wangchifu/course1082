@@ -52,29 +52,53 @@
                                 $select1 = "selected";
                                 $select2 = null;
                                 $select3 = null;
-                            }elseif($course->first_result1=="back"){
+                                $select4 = null;
+                                $select5 = null;
+                            }elseif($course->first_result1=="back" or $course->first_result1=="submit"){
                                 $select1 = null;
                                 $select2 = "selected";
                                 $select3 = null;
-                            }elseif($course->first_result1=="excellent"){
+                                $select4 = null;
+                                $select5 = null;
+                            }elseif($course->first_result1=="excellent1"){
                                 $select1 = null;
                                 $select2 = null;
                                 $select3 = "selected";
+                                $select4 = null;
+                                $select5 = null;
+                            }elseif($course->first_result1=="excellent2"){
+                                $select1 = null;
+                                $select2 = null;
+                                $select3 = null;
+                                $select4 = "selected";
+                                $select5 = null;
+                            }elseif($course->first_result1=="excellent3"){
+                                $select1 = null;
+                                $select2 = null;
+                                $select3 = null;
+                                $select4 = null;
+                                $select5 = "selected";
                             }
                         ?>
                         <td colspan="2">
                             <select name="first_result1" class="form-control" required>
                                 <option value="" disabled>
-                                    -----請選擇初審結果-----
-                                </option>
-                                <option value="ok" {{ $select1 }}>
-                                    符合！無需修改！
+                                    -----請選擇評審結果-----
                                 </option>
                                 <option value="back" {{ $select2 }}>
                                     退回！修改後再審！
                                 </option>
-                                <option value="excellent" {{ $select3 }}>
-                                    優秀！進入複審！
+                                <option value="ok" {{ $select1 }}>
+                                    符合！無需修改！不列入優良。
+                                </option>
+                                <option value="excellent3" {{ $select5 }}>
+                                    讚！列入優良學校課程計畫(甲等)
+                                </option>
+                                <option value="excellent2" {{ $select4 }}>
+                                    讚！列入優良學校課程計畫(優等)
+                                </option>
+                                <option value="excellent1" {{ $select3 }}>
+                                    讚！列入優良學校課程計畫(特優)
                                 </option>
                             </select>
                         </td>

@@ -12,7 +12,7 @@
             學校
         </th>
         <th>
-            初審委員
+            評審委員
         </th>
         <th>
             動作
@@ -29,7 +29,7 @@
             {{ Form::select('first_user_id', $users,null, ['class' => 'form-control','required'=>'required', 'placeholder' => '--']) }}
         </td>
         <td>
-            <button type="submit" onclick="confirm('確定？')">儲存初審委員</button>
+            <button type="submit" onclick="confirm('確定？')">儲存評審委員</button>
         </td>
     </tr>
 </table>

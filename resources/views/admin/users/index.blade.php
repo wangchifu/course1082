@@ -48,7 +48,7 @@
                     </h5>
                 </div>
                 <div class="card-body">
-                    @if($group_id !="1" and $group_id != "2")
+                    @if($group_id !="1" and $group_id != "2" and $group_id != "0")
                         <a href="{{ route('users.create',$group_id) }}" class="btn btn-success btn-sm"><i class="fas fa-plus"></i> 新增{{ $groups[$group_id] }}</a>
                     @endif
                     <table class="table table-hover">

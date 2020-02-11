@@ -1055,6 +1055,7 @@ class SchoolController extends Controller
             ->where('school_code',auth()->user()->code)
             ->first();
         if($action == "edit"){
+            /**
             if($course->first_result1==null){
                 $att['first_result1'] = "submit";
             }
@@ -1064,6 +1065,9 @@ class SchoolController extends Controller
             if($course->first_result2=="back"){
                 $att['first_result3'] = "submit";
             }
+             * */
+            $att['first_result1'] = "submit";
+
         }elseif($action == "edit2"){
             $att['special_result'] = "submit";
         }

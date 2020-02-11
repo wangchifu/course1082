@@ -148,9 +148,11 @@ class FirstController extends Controller
         $users = User::where('code',$course->school_code)
             ->get();
         $result = [
-            'ok'=>'符合！無需修改！',
+            'ok'=>'符合！無需修改！不列入優良。',
             'back'=>'退回！修改後再傳！',
-            'excellent'=>'優秀！進入複審！'
+            'excellent3'=>'讚！列入優良學校課程計畫(甲等)',
+            'excellent2'=>'讚！列入優良學校課程計畫(優等)',
+            'excellent1'=>'讚！列入優良學校課程計畫(特優)',
         ];
         foreach($users as $user){
             $to = $user->email;
@@ -298,9 +300,11 @@ class FirstController extends Controller
         $users = User::where('code',$course->school_code)
             ->get();
         $result = [
-            'ok'=>'符合！無需修改！',
+            'ok'=>'符合！無需修改！不列入優良。',
             'back'=>'退回！修改後再傳！',
-            'excellent'=>'優秀！進入複審！'
+            'excellent3'=>'讚！列入優良學校課程計畫(甲等)',
+            'excellent2'=>'讚！列入優良學校課程計畫(優等)',
+            'excellent1'=>'讚！列入優良學校課程計畫(特優)',
         ];
         foreach($users as $user){
             $to = $user->email;

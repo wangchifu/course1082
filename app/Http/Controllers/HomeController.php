@@ -309,15 +309,15 @@ class HomeController extends Controller
          * */
         $courses1 = Course::where('year',$select_year)
             ->where('open',1)
-            ->where('second_result','excellent1')
+            ->where('first_result1','excellent1')
             ->get();
         $courses2 = Course::where('year',$select_year)
             ->where('open',1)
-            ->where('second_result','excellent2')
+            ->where('first_result1','excellent2')
             ->get();
         $courses3 = Course::where('year',$select_year)
             ->where('open',1)
-            ->where('second_result','excellent3')
+            ->where('first_result1','excellent3')
             ->get();
 
         $schools = config('course.schools');

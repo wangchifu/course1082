@@ -35,13 +35,13 @@
                     @endif
 
                     <br><br>
-                    @if($course->second_result=="excellent1")
+                    @if($course->first_result1=="excellent1")
                         <img src="{{ asset('images/1.png') }}" width="100%">
                     @endif
-                    @if($course->second_result=="excellent2")
+                    @if($course->first_result1=="excellent2")
                         <img src="{{ asset('images/2.png') }}" width="100%">
                     @endif
-                    @if($course->second_result=="excellent3")
+                    @if($course->first_result1=="excellent3")
                         <img src="{{ asset('images/3.png') }}" width="100%">
                     @endif
                     <table class="table table-striped">
@@ -80,8 +80,12 @@
                                 @if($course->first_result1=="back")
                                     <span class="text-danger">被退回</span>
                                 @endif
-                                @if($course->first_result1=="excellent")
-                                    <span class="text-success">進入複審</span>
+                                @if($course->first_result1=="excellent1")
+                                    <span class="text-success">優良(特優)</span>
+                                @elseif($course->first_result1=="excellent2")
+                                    <span class="text-success">優良(優等)</span>
+                                @elseif($course->first_result1=="excellent3")
+                                    <span class="text-success">優良(甲等)</span>
                                 @endif
                                 @if($course->first_result1 != null)
                                     <a href="{{ route('schools.show_all',$course->year) }}" class="badge badge-danger" target="_blank">顯示全部結果</a>

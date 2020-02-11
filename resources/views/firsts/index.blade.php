@@ -37,17 +37,22 @@
                                 傳訊
                             </th>
                             <th nowrap>
-                                初審
+                                評審
                             </th>
+                            <!--
                             <th>
                                 初審-再傳
                             </th>
                             <th>
                                 初審-三傳
                             </th>
+                            -->
                         </tr>
                         </thead>
                         <tbody>
+                        <?php
+                            $question_array = \App\Question::where('year',$select_year)->pluck('id')->toArray();
+                        ?>
                         @foreach($courses as $course)
                             <tr>
                                 <td>
@@ -68,7 +73,16 @@
                                         <span class="text-danger">未送審</span>
                                     @elseif($course->first_result1=="submit")
                                         <span class="text-primary">已送審</span>
-                                        [<a href="{{ route('firsts.create1',['course'=>$course->id]) }}"><i class="fas fa-edit"></i>審核</a>]
+                                        <?php
+                                            $check_first_suggest1 = \App\FirstSuggest1::where('school_code',$course->school_code)
+                                                ->whereIn('question_id',$question_array)
+                                                ->first();
+                                        ?>
+                                        @if($check_first_suggest1)
+                                            [<a href="{{ route('firsts.edit1',$course->id) }}"><i class="fas fa-edit"></i> 修改</a>]
+                                        @else
+                                            [<a href="{{ route('firsts.create1',['course'=>$course->id]) }}"><i class="fas fa-edit"></i>審核</a>]
+                                        @endif
                                     @elseif($course->first_result1=="late")
                                         <span class="text-danger">逾期未交</span>
                                     @else
@@ -76,14 +90,19 @@
                                         <span class="text-success">通過</span>
                                         @elseif($course->first_result1=="back")
                                         <span class="text-warning">退回</span>
-                                        @elseif($course->first_result1=="excellent")
-                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良</span>
+                                        @elseif($course->first_result1=="excellent1")
+                                            <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良(特優)</span>
+                                        @elseif($course->first_result1=="excellent2")
+                                            <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良(優等)</span>
+                                        @elseif($course->first_result1=="excellent3")
+                                        <i class="fas fa-thumbs-up text-primary"></i> <span class="text-success">優良(甲等)</span>
                                         @endif
                                         @if($course->first_result2 == null)
                                             [<a href="{{ route('firsts.edit1',$course->id) }}"><i class="fas fa-edit"></i> 修改</a>]
                                         @endif
                                     @endif
                                 </td>
+                                <!--
                                 <td>
                                     @if($course->first_result2==null)
                                         @if($course->first_result1=="back" or $course->first_result1=="late")
@@ -129,6 +148,7 @@
                                         [<a href="{{ route('firsts.edit3',['course'=>$course->id]) }}"><i class="fas fa-edit"></i> 修改</a>]
                                     @endif
                                 </td>
+                                -->
                             </tr>
                         @endforeach
                         </tbody>

@@ -28,8 +28,12 @@
                 @if($course->first_result1=="back")
                     <span class="text-danger">被退回</span>
                 @endif
-                @if($course->first_result1=="excellent")
-                    <span class="text-success">進入複審</span>
+                @if($course->first_result1=="excellent1")
+                    <span class="text-success">優良(特優)</span>
+                @elseif($course->first_result1=="excellent2")
+                    <span class="text-success">優良(優等)</span>
+                @elseif($course->first_result1=="excellent3")
+                    <span class="text-success">優良(甲等)</span>
                 @endif
                 <br>
                 @if($course->first_reason1)

@@ -9,7 +9,7 @@
             學年度
         </th>
         <th>
-            初審委員
+            評審委員
         </th>
         <th>
             學校 <label><input type="checkbox" id="checkAll"/> 全選</label>

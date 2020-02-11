@@ -1,6 +1,6 @@
 @extends('layouts.master',['bg_color'=>'bg-dark'])
 
-@section('title','初審作業')
+@section('title','評審作業')
 
 @foreach($questions as $question)
     @if($question->g_s == 1 and $question->type != "0")
@@ -21,7 +21,7 @@
         <div class="col-md-12">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('firsts.index') }}">初審作業</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('firsts.index') }}">評審作業</a></li>
                     <li class="breadcrumb-item active" aria-current="page">審查 {{ $school_name }}</li>
                 </ol>
             </nav>
@@ -31,7 +31,7 @@
                 <table class="table">
                     <tr class="bg-info">
                         <th colspan="2">
-                            初審結果
+                            評審結果
                         </th>
                         <th colspan="3">
                             審查意見
@@ -41,16 +41,22 @@
                         <td colspan="2">
                             <select name="first_result1" class="form-control" required>
                                 <option value="" disabled selected>
-                                    -----請選擇初審結果-----
+                                    -----請選擇評審結果-----
                                 </option>
-                                <option value="ok" selected>
-                                    符合！無需修改！
-                                </option>
-                                <option value="back" >
+                                <option value="back" selected>
                                     退回！修改後再審！
                                 </option>
-                                <option value="excellent" >
-                                    優秀！進入複審！
+                                <option value="ok">
+                                    符合！無需修改！不列入優良。
+                                </option>
+                                <option value="excellent3">
+                                    讚！列入優良學校課程計畫(甲等)
+                                </option>
+                                <option value="excellent2">
+                                    讚！列入優良學校課程計畫(優等)
+                                </option>
+                                <option value="excellent1">
+                                    讚！列入優良學校課程計畫(特優)
                                 </option>
                             </select>
                         </td>
