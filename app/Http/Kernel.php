@@ -65,6 +65,7 @@ class Kernel extends HttpKernel
         'special' => \App\Http\Middleware\SpecialMiddleware::class,
         'first' => \App\Http\Middleware\FirstMiddleware::class,
         'second' => \App\Http\Middleware\SecondMiddleware::class,
+        'doschool' => \App\Http\Middleware\DoschoolMiddleware::class,
     ];
 
     /**

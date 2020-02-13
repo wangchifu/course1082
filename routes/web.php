@@ -278,3 +278,8 @@ Route::group(['middleware' => 'special'],function(){
     Route::post('specials/store' , 'SpecialController@store')->name('specials.store');
 
 });
+
+//督學
+Route::group(['middleware' => 'doschool'],function(){
+    Route::any('doschool' , 'HomeController@doschool')->name('doschool.index');
+});

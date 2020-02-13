@@ -11,6 +11,7 @@ use App\FirstSuggest2;
 use App\FirstSuggest3;
 use App\Message;
 use App\Part;
+use App\Question;
 use App\SecondSuggestOld;
 use App\SpecialReview;
 use App\SpecialSuggest;
@@ -266,14 +267,26 @@ class HomeController extends Controller
             ->where('school_code',$school_code)
             ->first();
 
-        if($course->open != 1){
-            echo "<body onload=alert('尚未公開！');window.close();>";
-            die();
+        //管理者和督學可以看各校上傳的內容
+        $check_open = 0;
+        if(auth()->check()){
+            if(auth()->user()->group_id !=9 and auth()->user()->group_id !=6){
+                $check_open = 1;
+            }
+        }else{
+                $check_open =1;
         }
-        if(check_date($select_year,4)){
-            echo "<body onload=alert('非開放查詢日期！');window.close();>";
-            die();
+        if($check_open){
+            if($course->open != 1){
+                echo "<body onload=alert('尚未公開！');window.close();>";
+                die();
+            }
+            if(check_date($select_year,4)){
+                echo "<body onload=alert('非開放查詢日期！');window.close();>";
+                die();
+            }
         }
+
 
         $data = [
             'course'=>$course,
@@ -331,5 +344,75 @@ class HomeController extends Controller
             'schools'=>$schools,
         ];
         return view('excellent',$data);
+    }
+
+    public function doschool(Request $request)
+    {
+        //年度選單
+        $year_items = Year::orderBy('year','DESC')->pluck('year','year')->toArray();
+        //選擇的年度
+        $select_year = ($request->input('year'))?$request->input('year'):current($year_items);
+
+        $page = ($request->input('page'))?$request->input('page'):1;
+
+        $schools = config('course.schools');
+
+        $courses = Course::where('year',$select_year)
+            ->paginate('25');
+
+        //取全部使用者的id2name
+        $usersId2Names = usersId2Names();
+
+        $first_name = [];
+        $second_name = [];
+        $open = [];
+        $first_result1 = [];
+        $first_result2 = [];
+        $first_result3 = [];
+        $second_result = [];
+
+
+        foreach($courses as $course){
+            $first_name[$course->school_code] = ($course->first_user_id)?$usersId2Names[$course->first_user_id]:null;
+            $second_name[$course->school_code] = ($course->second_user_id)?$usersId2Names[$course->second_user_id]:null;
+            $open[$course->school_code] = $course->open;
+            $first_result1[$course->school_code] = $course->first_result1;
+            $first_result2[$course->school_code] = $course->first_result2;
+            $first_result3[$course->school_code] = $course->first_result3;
+            $second_result[$course->school_code] = $course->second_result;
+        }
+
+
+        $special_questions = Question::where('year',$select_year)
+            ->where('g_s','2')
+            ->orderBy('order_by')
+            ->get();
+
+        $s_r = [];
+        $special_review_id=[];
+        $special_reviews = SpecialReview::where('year',$select_year)->get();
+        foreach($special_reviews as $special_review){
+            $s_r[$special_review->school_code][$special_review->question_id] = $special_review->user->name;
+            $special_review_id[$special_review->school_code][$special_review->question_id] = $special_review->id;
+        }
+
+        $data = [
+            'year_items'=>$year_items,
+            'page'=>$page,
+            'select_year'=>$select_year,
+            'schools'=>$schools,
+            'courses'=>$courses,
+            'first_name'=>$first_name,
+            'second_name'=>$second_name,
+            'open'=>$open,
+            'first_result1'=>$first_result1,
+            'first_result2'=>$first_result2,
+            'first_result3'=>$first_result3,
+            'second_result'=>$second_result,
+            's_r'=>$s_r,
+            'special_review_id'=>$special_review_id,
+            'special_questions'=>$special_questions,
+        ];
+        return view('doschools.index',$data);
     }
 }
