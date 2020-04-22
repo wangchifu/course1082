@@ -142,6 +142,7 @@ Route::group(['middleware'=>'admin'],function(){
     Route::post('reviews/second_user_store' , 'ReviewController@second_user_store')->name('reviews.second_user_store');
     Route::get('reviews/{course}/first_review_delete' , 'ReviewController@first_review_delete')->name('reviews.first_review_delete');
     Route::get('reviews/{course}/second_review_delete' , 'ReviewController@second_review_delete')->name('reviews.second_review_delete');
+    Route::post('reviews/search/{type}' , 'ReviewController@search')->name('reviews.search');
 
     //依委員選學校
     Route::get('reviews/{select_year}/first_by_user' , 'ReviewController@first_by_user')->name('reviews.first_by_user');

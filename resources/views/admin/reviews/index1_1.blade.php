@@ -77,6 +77,7 @@
                         </thead>
                         <tbody>
                         @foreach($courses as $course)
+                            @if(isset($schools[$course->school_code]))
                             <tr>
                                 <td nowrap>
                                     {{ $schools[$course->school_code] }} <small>({{ $course->school_code }})</small>
@@ -186,11 +187,11 @@
                                     @endif
                                 </td>
                             </tr>
+                            @endif
                         @endforeach
 
                         </tbody>
                     </table>
-                    {{ $courses->links() }}
                 </div>
             </div>
         </div>

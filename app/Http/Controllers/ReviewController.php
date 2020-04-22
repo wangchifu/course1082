@@ -64,6 +64,117 @@ class ReviewController extends Controller
         return view('admin.reviews.index',$data);
     }
 
+    public function search(Request $request,$type)
+    {
+        if($type == "1"){
+            //年度選單
+            $year_items = Year::orderBy('year','DESC')->pluck('year','year')->toArray();
+            //選擇的年度
+            $select_year = ($request->input('year'))?$request->input('year'):current($year_items);
+
+            $page = ($request->input('page'))?$request->input('page'):1;
+
+            $schools = config('course.schools');
+
+            $courses = Course::where('year',$select_year)
+                ->get();
+
+            //取全部使用者的id2name
+            $usersId2Names = usersId2Names();
+
+            $first_name = [];
+            $second_name = [];
+            $open = [];
+            $first_result1 = [];
+            $first_result2 = [];
+            $first_result3 = [];
+            $second_result = [];
+
+
+            foreach($courses as $course){
+                $first_name[$course->school_code] = ($course->first_user_id)?$usersId2Names[$course->first_user_id]:null;
+                $second_name[$course->school_code] = ($course->second_user_id)?$usersId2Names[$course->second_user_id]:null;
+                $open[$course->school_code] = $course->open;
+                $first_result1[$course->school_code] = $course->first_result1;
+                $first_result2[$course->school_code] = $course->first_result2;
+                $first_result3[$course->school_code] = $course->first_result3;
+                $second_result[$course->school_code] = $course->second_result;
+            }
+
+            $input = preg_quote($request->input('target'), '~'); // don't forget to quote input string!
+
+            $result = preg_grep('~' . $input . '~', $schools);
+
+            if(empty($result)){
+                return back();
+            }else{
+                $schools = $result;
+            }
+
+            $data = [
+                'year_items'=>$year_items,
+                'page'=>$page,
+                'select_year'=>$select_year,
+                'schools'=>$schools,
+                'courses'=>$courses,
+                'first_name'=>$first_name,
+                'second_name'=>$second_name,
+                'open'=>$open,
+                'first_result1'=>$first_result1,
+                'first_result2'=>$first_result2,
+                'first_result3'=>$first_result3,
+                'second_result'=>$second_result,
+            ];
+            return view('admin.reviews.index1_1',$data);
+        }
+
+        if($type=="2"){
+            //年度選單
+            $year_items = Year::orderBy('year','DESC')->pluck('year','year')->toArray();
+            //選擇的年度
+            $select_year = ($request->input('year'))?$request->input('year'):current($year_items);
+
+            $schools = config('course.schools');
+
+            $courses = Course::where('year',$select_year)
+                ->get();
+            $special_questions = Question::where('year',$select_year)
+                ->where('g_s','2')
+                ->orderBy('order_by')
+                ->get();
+
+            $s_r = [];
+            $special_review_id=[];
+            $special_reviews = SpecialReview::where('year',$select_year)->get();
+            foreach($special_reviews as $special_review){
+                $s_r[$special_review->school_code][$special_review->question_id] = $special_review->user->name;
+                $special_review_id[$special_review->school_code][$special_review->question_id] = $special_review->id;
+            }
+
+            $input = preg_quote($request->input('target'), '~'); // don't forget to quote input string!
+
+            $result = preg_grep('~' . $input . '~', $schools);
+
+            if(empty($result)){
+                return back();
+            }else{
+                $schools = $result;
+            }
+
+            $data = [
+                'year_items'=>$year_items,
+                'select_year'=>$select_year,
+                'schools'=>$schools,
+                'courses'=>$courses,
+                's_r'=>$s_r,
+                'special_review_id'=>$special_review_id,
+                'special_questions'=>$special_questions,
+            ];
+            return view('admin.reviews.index2_1',$data);
+        }
+
+    }
+
     public function first_user($select_year,$school_code)
     {
         $users = User::where('group_id',4)->pluck('name','id')->toArray();
