@@ -35,6 +35,7 @@ class ExportController extends Controller
 
 
         $subject_question = Question::where('type',3)
+            ->where('year',$select_year)
             ->first();
 
         $i=0;
