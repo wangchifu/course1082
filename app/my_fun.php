@@ -64,7 +64,7 @@ function check_login($n){
     if($n==="輔導室主任") return true;
     if($n==="特教組長") return true;
     if($n==="資料組長") return true;
-    if($n==="實驗研究組長") return true;
+    if($n==="實研組長") return true;
     if($n==="校長") return true;
 
     return false;
