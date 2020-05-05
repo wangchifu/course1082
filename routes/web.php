@@ -27,7 +27,8 @@ Route::get('schools/{file_path}/open' , 'FileController@open')->name('schools.op
 //上列包含了下列十條路由
 #登入
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
+//Route::post('login', 'Auth\LoginController@login');
+Route::post('login', 'Auth\LoginController@auth')->name('auth');
 
 //gsuite登入
 Route::get('glogin', 'GLoginController@showLoginForm')->name('glogin');
