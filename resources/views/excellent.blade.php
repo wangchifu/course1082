@@ -11,21 +11,23 @@
             </h2>
             <div class="card">
                 <div class="card-header">
-                    <table>
-                        <tr>
-                            <td>
-                                <img src="{{ asset('images/check.svg') }}" height="24">
-                            </td>
-                            <td>
-                                選擇年度：
-                            </td>
-                            <td>
-                                {{ Form::open(['route'=>'excellent','method'=>'post']) }}
-                                {{ Form::select('year',$years,$select_year,['onchange'=>'submit()']) }}
-                                {{ Form::close() }}
-                            </td>
-                        </tr>
-                    </table>
+                    <h5>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="{{ asset('images/check.svg') }}" height="24">
+                                </td>
+                                <td>
+                                    選擇年度：
+                                </td>
+                                <td>
+                                    {{ Form::open(['route'=>'excellent','method'=>'post']) }}
+                                    {{ Form::select('year',$years,$select_year,['onchange'=>'submit()']) }}
+                                    {{ Form::close() }}
+                                </td>
+                            </tr>
+                        </table>
+                    </h5>
                 </div>
                 <div class="card-body">
                     <img src="{{ asset('images/1.png') }}" width="20%"><br>
