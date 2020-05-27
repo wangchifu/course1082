@@ -178,11 +178,6 @@ class HomeController extends Controller
         $select_year = ($request->input('year'))?$request->input('year'):current($years);
 
 
-        if(check_date($select_year,4)){
-            $words = check_date($select_year,4);
-            return view('layouts.page_error',compact('words'));
-        };
-
         $courses = Course::where('year',$select_year)
             ->get();
         foreach($courses as $course){
@@ -320,18 +315,34 @@ class HomeController extends Controller
 
             })->get();
          * */
-        $courses1 = Course::where('year',$select_year)
-            ->where('open',1)
-            ->where('first_result1','excellent1')
-            ->get();
-        $courses2 = Course::where('year',$select_year)
-            ->where('open',1)
-            ->where('first_result1','excellent2')
-            ->get();
-        $courses3 = Course::where('year',$select_year)
-            ->where('open',1)
-            ->where('first_result1','excellent3')
-            ->get();
+        if($select_year=="108"){
+            $courses1 = Course::where('year',$select_year)
+                ->where('open',1)
+                ->where('second_result','excellent1')
+                ->get();
+            $courses2 = Course::where('year',$select_year)
+                ->where('open',1)
+                ->where('second_result','excellent2')
+                ->get();
+            $courses3 = Course::where('year',$select_year)
+                ->where('open',1)
+                ->where('second_result','excellent3')
+                ->get();
+        }else{
+            $courses1 = Course::where('year',$select_year)
+                ->where('open',1)
+                ->where('first_result1','excellent1')
+                ->get();
+            $courses2 = Course::where('year',$select_year)
+                ->where('open',1)
+                ->where('first_result1','excellent2')
+                ->get();
+            $courses3 = Course::where('year',$select_year)
+                ->where('open',1)
+                ->where('first_result1','excellent3')
+                ->get();
+        }
+
 
         $schools = config('course.schools');
 

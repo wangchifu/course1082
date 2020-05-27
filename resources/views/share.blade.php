@@ -30,6 +30,9 @@
                     </h5>
                 </div>
                 <div class="card-body">
+                    @if(check_date($select_year,4))
+                        {{ check_date($select_year,4) }}
+                    @else
                     <h4><i class="fab fa-fort-awesome"></i> 彰化市</h4>
                     <a href="{{ url('share/'.$select_year.'/074308/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074308'] !!}彰化藝術高中(國中部)</a>
                     <a href="{{ url('share/'.$select_year.'/074505/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074505'] !!}陽明國中</a>
@@ -303,6 +306,7 @@
                     <a href="{{ url('share/'.$select_year.'/074710/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074710'] !!}復興國小</a>
                     <a href="{{ url('share/'.$select_year.'/074711/') }}" class="btn btn-light btn-sm" style="margin:3px" target="_blank">{!! $open['074711'] !!}源泉國小</a>
                     <hr>
+                    @endif
                 </div>
             </div>
         </div>
