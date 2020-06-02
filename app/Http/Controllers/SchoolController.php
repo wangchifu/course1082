@@ -131,6 +131,15 @@ class SchoolController extends Controller
 
         $year = Year::where('year',$select_year)->first();
 
+        $d1 = str_replace('-','',$year->step1_date1);
+        $d2 = str_replace('-','',$year->step1_date2);
+        $today = date('Ymd');
+
+        if($today < $d1){
+            return back()->withErrors('非可上傳日');
+        }
+
+
         $course = Course::where('year',$select_year)
             ->where('school_code',auth()->user()->code)
             ->first();

@@ -44,6 +44,15 @@
                     @if($course->first_result1=="excellent3")
                         <img src="{{ asset('images/3.png') }}" width="100%">
                     @endif
+
+                    @if($errors->any())
+                        <div class="form-group row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <span class="text-danger">{{ $errors->first() }}</span>
+                            </div>
+                        </div>
+                    @endif
+
                     <table class="table table-striped">
                         <tr>
                             <th>

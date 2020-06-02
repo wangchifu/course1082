@@ -42,7 +42,8 @@
   <component name="ChangeListManager">
     <list default="true" id="20623a93-5540-4d29-8e75-656f5cd3d6e8" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SchoolController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SchoolController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base_course.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,21 +241,8 @@
       <workItem from="1588662480528" duration="172000" />
       <workItem from="1588665862903" duration="882000" />
       <workItem from="1589329241527" duration="607000" />
-      <workItem from="1590540807902" duration="1017000" />
-    </task>
-    <task id="LOCAL-00003" summary="標籤">
-      <created>1567653202297</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1567653202297</updated>
-    </task>
-    <task id="LOCAL-00004" summary="年度管理OK">
-      <created>1567757311921</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1567757311921</updated>
+      <workItem from="1590540807902" duration="2301000" />
+      <workItem from="1591058428674" duration="779000" />
     </task>
     <task id="LOCAL-00005" summary="題目管理尚欠修改題目">
       <created>1568087940488</created>
@@ -585,7 +573,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588666665037</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="fix bug">
+      <created>1590542403375</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1590542403376</updated>
+    </task>
+    <task id="LOCAL-00053" summary="fix bug">
+      <created>1590542552339</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1590542552339</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,13 +640,13 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="999" y="333" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1588666372805" />
-    <state x="198" y="336" width="424" height="491" key="FileChooserDialogImpl" timestamp="1589330424184">
+    <state x="198" y="336" width="424" height="491" key="FileChooserDialogImpl" timestamp="1590549372821">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="198" y="336" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1589330424184" />
-    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1588666666322">
+    <state x="198" y="336" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1590549372821" />
+    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1590542553339">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1588666666322" />
+    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1590542553339" />
   </component>
 </project>

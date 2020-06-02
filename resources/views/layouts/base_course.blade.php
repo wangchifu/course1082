@@ -1,5 +1,5 @@
 <h1>{{ $school_name }} {{ $select_year }}學年度課程計畫</h1>
-<table border="1" class="table-striped">
+<table border="1">
     @foreach($parts as $part)
         <tr bgcolor="#cccccc">
             <td>
