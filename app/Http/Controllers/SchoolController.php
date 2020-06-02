@@ -135,7 +135,7 @@ class SchoolController extends Controller
         $d2 = str_replace('-','',$year->step1_date2);
         $today = date('Ymd');
 
-        if($today < $d1){
+        if($today < $d1 or $today >$d2){
             return back()->withErrors('非可上傳日');
         }
 
