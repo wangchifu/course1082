@@ -5,7 +5,7 @@
             <label>所屬「部分」</label>
         </td>
         <td colspan="2">
-            {{ Form::select('part_id',$part_items,null,['required'=>'required']) }}
+            {{ Form::select('part_id',$part_items,null,['required'=>'required','style'=>'height:28px;']) }}
         </td>
     </tr>
     <tr>

@@ -30,7 +30,7 @@
                                         <tr>
                                             <td>
                                                 {{ Form::open(['route'=>'users.index','method'=>'post']) }}
-                                                {{ Form::select('group_id',$groups,$group_id,['onchange'=>'submit()']) }}
+                                                {{ Form::select('group_id',$groups,$group_id,['onchange'=>'submit()','style'=>'height:28px;']) }}
                                                 {{ Form::close() }}
                                             </td>
                                             <td>

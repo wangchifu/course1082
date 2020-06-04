@@ -4,7 +4,7 @@
             <label>所屬「大題」</label>
         </td>
         <td colspan="2">
-            {{ Form::select('topic_id',$topic_items,null,['required'=>'required']) }}
+            {{ Form::select('topic_id',$topic_items,null,['required'=>'required','style'=>'height:28px;']) }}
         </td>
     </tr>
     <tr>
@@ -28,7 +28,7 @@
             <label>題型</label>
         </td>
         <td colspan="2">
-            {{ Form::select('type',$type_items,null,['required'=>'required']) }}
+            {{ Form::select('type',$type_items,null,['required'=>'required','style'=>'height:28px;']) }}
         </td>
     </tr>
     <tr>
@@ -44,7 +44,7 @@
             <label>類別</label>
         </td>
         <td>
-            {{ Form::select('g_s',$g_s_items,null,['required'=>'required']) }}
+            {{ Form::select('g_s',$g_s_items,null,['required'=>'required','style'=>'height:28px;']) }}
         </td>
         <td>
             <button class="btn btn-success btn-sm" onclick="return confirm('確定嗎？')"><i class="fas fa-save"></i> 儲存「子題」</button>

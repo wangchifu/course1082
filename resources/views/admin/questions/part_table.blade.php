@@ -5,7 +5,7 @@
             <label>序號</label>
         </td>
         <td colspan="2">
-            {{ Form::select('order_by',$part_order_by,null,['required'=>'required']) }}
+            {{ Form::select('order_by',$part_order_by,null,['required'=>'required','style'=>'height:28px;']) }}
         </td>
     </tr>
     <tr>

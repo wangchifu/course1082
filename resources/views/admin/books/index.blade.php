@@ -57,7 +57,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($mandarin_books as $book)
@@ -88,7 +88,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($dialects_books as $book)
@@ -118,7 +118,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($english_books as $book)
@@ -148,7 +148,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($mathematics_books as $book)
@@ -178,7 +178,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($life_curriculum_books as $book)
@@ -208,7 +208,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($social_studies_books as $book)
@@ -237,7 +237,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($science_technology_books as $book)
@@ -266,7 +266,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($science_books as $book)
@@ -296,7 +296,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($arts_humanities_books as $book)
@@ -326,7 +326,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($integrative_activities_books as $book)
@@ -355,7 +355,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($technology_books as $book)
@@ -385,7 +385,7 @@
                             </td>
                             <td>
                                 {{ Form::open(['route'=>'books.destroy','method'=>'delete'])}}
-                                <select name="id">
+                                <select name="id" style='height:28px;'>
                                     <option>
                                     </option>
                                     @foreach($health_physical_books as $book)
