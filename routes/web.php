@@ -182,6 +182,8 @@ Route::group(['middleware'=>'admin'],function(){
     Route::get('reviews/{course}/{page}/{action}/back_null' , 'ReviewController@back_null')->name('reviews.back_null');
     Route::get('show_special/{select_year}' , 'ReviewController@show_special')->name('reviews.show_special');
 
+    Route::get('reviews_special/{course}/{page}/{action}/back_null' , 'ReviewController@back_special_null')->name('reviews_special.back_null');
+
     //匯出表單
     Route::match(['get','post'],'exports/index' , 'ExportController@index')->name('exports.index');
     Route::get('exports/{select_year}/section' , 'ExportController@section')->name('exports.section');

@@ -48,6 +48,9 @@
                                 校名
                                 <br><a href="{{ route('reviews.show_special',$select_year) }}" class="badge badge-danger" target="_blank">上傳情況</a>
                             </th>
+                            <th>
+                                狀況
+                            </th>
                             @foreach($special_questions as $special_question)
                                 <th>
                                     {{ $special_question->order_by }}：
@@ -62,6 +65,18 @@
                             <tr>
                                 <td nowrap>
                                     {{ $schools[$course->school_code] }} <small>({{ $course->school_code }})</small>
+                                </td>
+                                <td nowrap>
+                                    @if($course->special_result==null)
+                                        <span class="text-warning">未送審</span>
+                                    @endif
+                                    @if($course->special_result=="submit")
+                                        <span class="text-primary">已送審</span>
+                                        <a href="{{ route('reviews_special.back_null',['course'=>$course->id,'page'=>$page,'action'=>'1']) }}" onclick="return confirm('確定設為未送審？')">
+                                            <i class="fas fa-times-circle text-danger"></i>
+                                        </a>
+                                    @endif
+                                </td>
                                 </td>
                                 @foreach($special_questions as $special_question)
                                     <td>

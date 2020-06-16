@@ -134,6 +134,8 @@ class ReviewController extends Controller
             //選擇的年度
             $select_year = ($request->input('year'))?$request->input('year'):current($year_items);
 
+            $page = ($request->input('page'))?$request->input('page'):1;
+
             $schools = config('course.schools');
 
             $courses = Course::where('year',$select_year)
@@ -163,6 +165,7 @@ class ReviewController extends Controller
 
             $data = [
                 'year_items'=>$year_items,
+                'page'=>$page,
                 'select_year'=>$select_year,
                 'schools'=>$schools,
                 'courses'=>$courses,
@@ -312,6 +315,8 @@ class ReviewController extends Controller
         //選擇的年度
         $select_year = ($request->input('year'))?$request->input('year'):current($year_items);
 
+        $page = ($request->input('page'))?$request->input('page'):1;
+
         $schools = config('course.schools');
 
         $courses = Course::where('year',$select_year)
@@ -337,6 +342,7 @@ class ReviewController extends Controller
             's_r'=>$s_r,
             'special_review_id'=>$special_review_id,
             'special_questions'=>$special_questions,
+            'page'=>$page,
         ];
         return view('admin.reviews.index2',$data);
     }
@@ -555,6 +561,15 @@ class ReviewController extends Controller
 
         $course->update($att);
         return redirect()->route('reviews.index',['page'=>$page]);
+    }
+
+    public function back_special_null(Course $course,$page,$action)
+    {
+
+        $att['special_result'] = null;
+
+        $course->update($att);
+        return redirect()->route('reviews.index2',['page'=>$page]);
     }
 
     public function show_special($select_year)
