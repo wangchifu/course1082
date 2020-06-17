@@ -629,6 +629,8 @@ class SchoolController extends Controller
                     'size' => $file->getClientSize(),
                 ];
                 $new_filename = date('YmdHis').'-'.$info['original_filename'];
+                $new_filename = str_replace('{','',$new_filename);
+                $new_filename = str_replace('}','',$new_filename);
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code.'/'.$question_id,$new_filename);
 
                 $att['code'] = auth()->user()->code;
@@ -880,6 +882,8 @@ class SchoolController extends Controller
                     'size' => $file->getClientSize(),
                 ];
                 $new_filename = date('YmdHis').'-'.$info['original_filename'];
+                $new_filename = str_replace('{','',$new_filename);
+                $new_filename = str_replace('}','',$new_filename);
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code.'/'.$question_id,$new_filename);
 
                 $att['code'] = auth()->user()->code;
@@ -966,6 +970,8 @@ class SchoolController extends Controller
                     'size' => $file->getClientSize(),
                 ];
                 $new_filename = date('YmdHis').'-'.$info['original_filename'];
+                $new_filename = str_replace('{','',$new_filename);
+                $new_filename = str_replace('}','',$new_filename);
                 $file->storeAs('public/upload/'.$select_year.'/'.auth()->user()->code.'/'.$question_id,$new_filename);
 
                 $att['code'] = auth()->user()->code;
