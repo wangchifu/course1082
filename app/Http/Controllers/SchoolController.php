@@ -8,9 +8,11 @@ use App\Http\Requests\UploadRequest;
 use App\Log;
 use App\Part;
 use App\Question;
+use App\Topic;
 use App\Upload;
 use App\Year;
 use Illuminate\Http\Request;
+use Symfony\Component\CssSelector\Parser\Token;
 
 class SchoolController extends Controller
 {
@@ -1102,11 +1104,15 @@ class SchoolController extends Controller
         $course = Course::where('school_code',auth()->user()->code)
             ->where('year',$select_year)
             ->first();
+        $topics = Topic::where('year',$select_year)
+            ->orderBy('order_by')
+            ->get();
         $questions = Question::where('year',$select_year)
             ->orderBy('order_by')
             ->get();
         $data = [
             'select_year'=>$select_year,
+            'topics'=>$topics,
             'questions'=>$questions,
             'course'=>$course,
         ];

@@ -70,7 +70,8 @@
     </tr>
     </thead>
     <tbody>
-        @foreach($questions as $question)
+        @foreach($topics as $topic)
+        @foreach($topic->questions as $question)
             <?php
                 if($question->g_s=="1"){
                     $suggest1 = \App\FirstSuggest1::where('school_code',auth()->user()->code)
@@ -206,6 +207,7 @@
                     </td>
                 </tr>
             @endif
+        @endforeach
         @endforeach
     </tbody>
 </table>

@@ -42,9 +42,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20623a93-5540-4d29-8e75-656f5cd3d6e8" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReviewController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/reviews/index2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/reviews/index2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,14 +248,7 @@
       <workItem from="1591154719368" duration="14000" />
       <workItem from="1591236472772" duration="464000" />
       <workItem from="1591604002876" duration="17000" />
-      <workItem from="1592275848550" duration="1191000" />
-    </task>
-    <task id="LOCAL-00009" summary="學校log管理ok">
-      <created>1568254145271</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1568254145271</updated>
+      <workItem from="1592275848550" duration="2235000" />
     </task>
     <task id="LOCAL-00010" summary="多選題目ok">
       <created>1568274659901</created>
@@ -596,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591236908330</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fix bug">
+      <created>1592277408505</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1592277408506</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -653,9 +650,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="198" y="336" width="424" height="491" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1591604018016" />
-    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1591236911273">
+    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1592277410685">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1591236911273" />
+    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1592277410685" />
   </component>
 </project>
