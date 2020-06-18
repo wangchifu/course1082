@@ -50,6 +50,7 @@ if (! function_exists('deldir')) {
 
 //檢查可登入的
 function check_login($n){
+    if($n==="國小部教學組長") return true;
     if($n==="教學組長") return true;
     if($n==="教師兼教學組長") return true;
     if($n==="教學註冊組長") return true;

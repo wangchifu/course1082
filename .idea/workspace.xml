@@ -42,7 +42,6 @@
   <component name="ChangeListManager">
     <list default="true" id="20623a93-5540-4d29-8e75-656f5cd3d6e8" name="Default Changelist" comment="fix bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base_course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base_course.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,14 +249,8 @@
       <workItem from="1591236472772" duration="464000" />
       <workItem from="1591604002876" duration="17000" />
       <workItem from="1592275848550" duration="2235000" />
-      <workItem from="1592377826637" duration="1462000" />
-    </task>
-    <task id="LOCAL-00010" summary="多選題目ok">
-      <created>1568274659901</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1568274659901</updated>
+      <workItem from="1592377826637" duration="2194000" />
+      <workItem from="1592444754965" duration="597000" />
     </task>
     <task id="LOCAL-00011" summary="日期填入ok">
       <created>1568276755944</created>
@@ -595,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592277408506</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="fix bug">
+      <created>1592379992479</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1592379992479</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,9 +656,9 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="748" y="169" width="497" height="752" key="RollbackChangesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1592377929261" />
-    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1592277410685">
+    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2" timestamp="1592379994586">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1592277410685" />
+    <state x="544" y="302" width="800" height="538" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1592379994586" />
   </component>
 </project>
