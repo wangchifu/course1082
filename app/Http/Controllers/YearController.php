@@ -36,7 +36,7 @@ class YearController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'year'=>'required|numeric||between:100,999',
+            'year'=>'required|numeric||between:100,999',
             'step1_date1'=>'required|date_format:"Y-m-d"',
             'step1_date2'=>'required|date_format:"Y-m-d"|after:step1_date1',
             'step2_date1'=>'required|date_format:"Y-m-d"',
@@ -93,12 +93,6 @@ class YearController extends Controller
             'step1_date2'=>'required|date_format:"Y-m-d"|after:step1_date1',
             'step2_date1'=>'required|date_format:"Y-m-d"',
             'step2_date2'=>'required|date_format:"Y-m-d"|after:step2_date1',
-            'step2_1_date1'=>'required|date_format:"Y-m-d"',
-            'step2_1_date2'=>'required|date_format:"Y-m-d"|after:step2_1_date1',
-            'step2_2_date1'=>'required|date_format:"Y-m-d"',
-            'step2_2_date2'=>'required|date_format:"Y-m-d"|after:step2_2_date1',
-            'step3_date1'=>'required|date_format:"Y-m-d"',
-            'step3_date2'=>'required|date_format:"Y-m-d"|after:step3_date1',
             'step4_date1'=>'required|date_format:"Y-m-d"',
             'step4_date2'=>'required|date_format:"Y-m-d"|after:step4_date1',
         ]);

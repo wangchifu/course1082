@@ -96,7 +96,7 @@
                                         <span class="text-dark">未送審</span>
                                     @endif
                                     @if($course->first_result1=='late')
-                                        <span class="text-warning">未交</span>
+                                        <span class="text-warning">遲交</span>
                                     @endif
                                     @if($course->first_result1=="submit")
                                         <span class="text-primary">已送審</span>

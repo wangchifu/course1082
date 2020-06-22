@@ -131,16 +131,6 @@ class SchoolController extends Controller
         //    return back();
         //}
 
-        $year = Year::where('year',$select_year)->first();
-
-        $d1 = str_replace('-','',$year->step1_date1);
-        $d2 = str_replace('-','',$year->step1_date2);
-        $today = date('Ymd');
-
-        if($today < $d1 or $today >$d2){
-            return back()->withErrors('非可上傳日');
-        }
-
 
         $course = Course::where('year',$select_year)
             ->where('school_code',auth()->user()->code)
@@ -148,19 +138,32 @@ class SchoolController extends Controller
         //如果已送出，不可編輯
         $u =explode('/',$_SERVER['REQUEST_URI']);
         if($u[2]=="edit" and $course->first_result1=="submit"){
-            return back();
+            return back()->withErrors('普教送審中');
         }
+
+        /**
         if($u[2]=="edit" and $course->first_result2=="submit"){
             return back();
         }
         if($u[2]=="edit" and $course->first_result3=="submit"){
             return back();
         }
+         * */
         /**
         if($u[2]=="edit2" and $course->special_result=="submit"){
             return back();
         }
          * */
+
+        $year = Year::where('year',$select_year)->first();
+
+        $d1 = str_replace('-','',$year->step1_date1);
+        $d2 = str_replace('-','',$year->step1_date2);
+        $today = date('Ymd');
+
+        if(($today < $d1 or $today >$d2) and ($course->first_result1=="late" or empty($course->first_result1))){
+            return back()->withErrors('非可上傳日');
+        }
 
         $part_order_by = config('course.part_order_by');
         $type_items = config('course.type_items');
