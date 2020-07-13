@@ -163,7 +163,7 @@ class FirstController extends Controller
                 send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
@@ -315,7 +315,7 @@ class FirstController extends Controller
                 send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
@@ -447,7 +447,7 @@ class FirstController extends Controller
                 send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
@@ -600,7 +600,7 @@ class FirstController extends Controller
                 send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
@@ -732,7 +732,7 @@ class FirstController extends Controller
                 send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
@@ -883,7 +883,7 @@ class FirstController extends Controller
                 send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 
