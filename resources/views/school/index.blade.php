@@ -30,7 +30,11 @@
                     @if(($course->first_result1==null or $course->first_result1=="back" or $course->first_result1=="late") and ($course->first_result2 ==null or $course->first_result2 =="back") and ($course->first_result3 ==null))
                         <a href="{{ route('schools.edit',$select_year) }}" class="btn btn-success btn-sm"><i class="fas fa-upload"></i> 上傳普教課程</a>
                     @endif
-                    @if($course->special_result==null or $course->special_result=="back")
+                    <?php
+                        $special_questions_id_array = \App\Question::where('year',$select_year)->where('g_s','2')->pluck('id')->toArray();
+                        $check_pass = \App\SpecialSuggest::whereIn('question_id',$special_questions_id_array)->where('pass','0')->where('school_code',auth()->user()->code)->count();
+                    ?>
+                    @if($course->special_result==null or ($check_pass > 0 and $course->special_result=="back"))
                         <a href="{{ route('schools.edit2',$select_year) }}" class="btn btn-outline-success btn-sm"><i class="fas fa-upload"></i> 上傳特教課程</a>
                     @endif
 
@@ -106,6 +110,10 @@
                                 @endif
                                 @if($course->special_result=="submit")
                                     <span class="text-primary">已送審</span>
+                                    <a href="{{ route('schools.show_special',$course->year) }}" class="badge badge-danger" target="_blank">顯示特教結果</a>
+                                @endif
+                                @if($course->special_result=="back")
+                                    <span class="text-danger">被退回</span>
                                     <a href="{{ route('schools.show_special',$course->year) }}" class="badge badge-danger" target="_blank">顯示特教結果</a>
                                 @endif
                             </td>

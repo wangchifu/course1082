@@ -24,6 +24,26 @@
                             $show_wrong2 = null;
                             $show_wrong3 = null;
                             $bg= null;
+                            if($u[2] == "edit"){
+                                $first_suggest1 = \App\FirstSuggest1::where('question_id',$question->id)->where('school_code',auth()->user()->code)->first();
+                                if($first_suggest1){
+                                    if($first_suggest1->pass==0){
+                                        $show_wrong1 = "<i class='fas fa-times-circle text-danger'></i>";
+                                        $bg = "background-color:#FF8888";
+                                    }
+                                }
+                            }
+                            if($u[2] == "edit2"){
+                                $special_suggest = \App\SpecialSuggest::where('question_id',$question->id)->where('school_code',auth()->user()->code)->first();
+                                if($special_suggest){
+                                    if($special_suggest->pass==0){
+                                        $show_wrong1 = "<i class='fas fa-times-circle text-danger'></i>";
+                                        $bg = "background-color:#FF8888";
+                                    }
+                                }
+                            }
+
+                            /**
                             if($course->first_result1=="back" and $course->first_result2==null){
                                 $first1 = \App\FirstSuggest1::where('question_id',$question->id)
                                     ->where('pass','0')
@@ -51,9 +71,11 @@
                                     $bg = "background-color:#FF8888";
                                 }
                             }
+                             * */
+
                         ?>
                         <div class="centent-div" style="{{ $bg }}">
-                            {!! $show_wrong1 !!}{!! $show_wrong2 !!}{!! $show_wrong3 !!}{{ $question->order_by }} {{ $question->title }}<br>
+                            {!! $show_wrong1 !!}{{ $question->order_by }} {{ $question->title }}<br>
                         </div>
                         @yield('upload'.$question->id)
                         @if($question->type!="0")

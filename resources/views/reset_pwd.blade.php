@@ -35,6 +35,18 @@
                     @elseif(auth()->user()->login_type=='gsuite')
                         使用GSuite登入，請更改OpenID密碼，登入後即更改本站密碼。
                     @endif
+                    <?php
+                    $special_questions_id_array = \App\Question::where('year','109')->where('g_s','2')->pluck('id')->toArray();
+                    $schools = config('course.schools');
+                    foreach($schools as $k=>$v){
+                        $check_pass = \App\SpecialSuggest::whereIn('question_id',$special_questions_id_array)->where('pass','0')->where('school_code',$k)->count();
+                        if($check_pass>0){
+                            $course = \App\Course::where('year','109')->where('school_code',$k)->first();
+                            $att['special_result'] ="back";
+                            $course->update($att);
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>

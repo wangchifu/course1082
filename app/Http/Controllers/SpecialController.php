@@ -69,8 +69,18 @@ class SpecialController extends Controller
         if($special_suggest){
             $special_suggest->update($att);
         }else{
-            SpecialSuggest::create($att);
+            $special_suggest = SpecialSuggest::create($att);
         }
+
+        if($att['pass']==0){
+            $question = Question::find($att['question_id']);
+            $course = Course::where('school_code',$att['school_code'])->where('year',$question->year)->first();
+            $att['special_result'] = "back";
+            $course->update($att);
+        }
+
+        $att['special_result'] = "back";
+        $course->update($att);
 
         $users = User::where('code',$att['school_code'])
             ->get();
@@ -85,10 +95,10 @@ class SpecialController extends Controller
             $body = "課程計畫特教部分 審查結果通知----".$result." 請登入 https://course108.chc.edu.tw 查看！" ;
             $line = $user->access_token;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
-                line_to($line,$body);
+                //line_to($line,$body);
             }
         }
 

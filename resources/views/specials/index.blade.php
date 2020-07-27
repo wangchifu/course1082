@@ -56,6 +56,7 @@
                                             $special_suggest = \App\SpecialSuggest::where('question_id',$special_question->id)
                                             ->where('school_code',$k)
                                             ->first();
+                                            $course = \App\Course::where('school_code',$k)->where('year',$special_question->year)->first();
                                         ?>
                                         @if($special_suggest)
                                             @if($special_suggest->pass =="1")
@@ -63,6 +64,9 @@
                                             @endif
                                             @if($special_suggest->pass =="0")
                                                 <span class="text-danger">不符合</span>
+                                                @if($course->special_result=="submit")
+                                                    (已再送審)
+                                                @endif
                                             @endif
                                         @else
                                                 <span class="text-warning">未審</span>

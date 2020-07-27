@@ -160,7 +160,7 @@ class FirstController extends Controller
             $subject = "課程計畫初審結果通知----".$result[$request->input('first_result1')];
             $body = "課程計畫初審結果通知----".$result[$request->input('first_result1')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
                 //line_to($line,$body);
@@ -312,7 +312,7 @@ class FirstController extends Controller
             $subject = "課程計畫初審結果修改通知----".$result[$request->input('first_result1')];
             $body = "課程計畫初審結果修改通知----".$result[$request->input('first_result1')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
                 //line_to($line,$body);
@@ -444,7 +444,7 @@ class FirstController extends Controller
             $subject = "課程計畫初審二傳結果通知----".$result[$request->input('first_result2')];
             $body = "課程計畫初審二傳結果通知----".$result[$request->input('first_result2')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
                 //line_to($line,$body);
@@ -597,7 +597,7 @@ class FirstController extends Controller
             $subject = "課程計畫初審二傳結果修改通知----".$result[$request->input('first_result2')];
             $body = "課程計畫初審二傳結果修改通知----".$result[$request->input('first_result2')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
                 //line_to($line,$body);
@@ -729,7 +729,7 @@ class FirstController extends Controller
             $subject = "課程計畫初審三傳結果通知----".$result[$request->input('first_result3')];
             $body = "課程計畫初審結果三傳通知----".$result[$request->input('first_result3')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
                 //line_to($line,$body);
@@ -880,7 +880,7 @@ class FirstController extends Controller
             $subject = "課程計畫初審三傳結果修改通知----".$result[$request->input('first_result3')];
             $body = "課程計畫初審三傳結果修改通知----".$result[$request->input('first_result3')]." 請登入 https://course108.chc.edu.tw 查看！" ;
             if($to){
-                send_mail($to,$subject,$body);
+                //send_mail($to,$subject,$body);
             }
             if($line){
                 //line_to($line,$body);
