@@ -40,14 +40,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20623a93-5540-4d29-8e75-656f5cd3d6e8" name="Default Changelist" comment="取消line">
+    <list default="true" id="20623a93-5540-4d29-8e75-656f5cd3d6e8" name="Default Changelist" comment="修正bug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FirstController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FirstController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SpecialController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SpecialController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reset_pwd.blade.php" afterPath="$PROJECT_DIR$/resources/views/reset_pwd.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/school/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/school/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/school/questions.blade.php" afterPath="$PROJECT_DIR$/resources/views/school/questions.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/specials/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/specials/index.blade.php" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/box/spout/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -155,11 +150,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="reset_pwd.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reset_pwd.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/reset_pwd.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+            <state relative-caret-position="578">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -180,6 +175,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
               <caret line="34" column="181" selection-start-line="33" selection-start-column="24" selection-end-line="34" selection-end-column="181" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpecialController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SpecialController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -645,13 +650,6 @@
       <workItem from="1594607633622" duration="875000" />
       <workItem from="1595826287769" duration="19000" />
     </task>
-    <task id="LOCAL-00014" summary="年級領域版本ok">
-      <created>1568856981077</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1568856981077</updated>
-    </task>
     <task id="LOCAL-00015" summary="年級領域單檔ok">
       <created>1568882078317</created>
       <option name="number" value="00015" />
@@ -988,11 +986,18 @@
       <option name="project" value="LOCAL" />
       <updated>1594607890152</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="修正bug">
+      <created>1595832032428</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1595832032429</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8537000" />
+    <option name="totallyTimeSpent" value="8748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="27" width="1848" height="1053" extended-state="6" />
@@ -1053,7 +1058,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="年級領域單檔ok" />
     <MESSAGE value="年級領域節數開始儲存" />
     <MESSAGE value="年級領域節數ok" />
     <MESSAGE value="普教審查管理" />
@@ -1078,7 +1082,8 @@
     <MESSAGE value="實驗研究組長可登入" />
     <MESSAGE value="fix bug" />
     <MESSAGE value="取消line" />
-    <option name="LAST_COMMIT_MESSAGE" value="取消line" />
+    <MESSAGE value="修正bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="修正bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="999" y="333" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1588666372805">
@@ -1432,14 +1437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SpecialController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/school/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="535">
@@ -1474,10 +1471,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/school/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/reset_pwd.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="34" column="181" selection-start-line="33" selection-start-column="24" selection-end-line="34" selection-end-column="181" />
+        <state relative-caret-position="578">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1490,10 +1487,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/reset_pwd.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/school/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="43" column="62" selection-start-line="43" selection-start-column="62" selection-end-line="43" selection-end-column="62" />
+        <state relative-caret-position="266">
+          <caret line="34" column="181" selection-start-line="33" selection-start-column="24" selection-end-line="34" selection-end-column="181" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SpecialController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
           <folding />
         </state>
       </provider>
