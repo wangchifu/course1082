@@ -35,13 +35,32 @@
                                     <?php
                                     $upload= \App\Upload::where('question_id',$special_question->id)
                                     ->where('code',$course->school_code)
-                                    ->first();
+				    ->first();
+				    $special_suggest = \App\SpecialSuggest::where('question_id',$special_question->id)
+			            ->where('school_code',$course->school_code)
+				    ->first(); 
                                     ?>
                                     <td>
                                         @if($upload)
                                             <span class="text-success">
                                                 已上傳
-                                            </span>
+					    </span>
+					    @if($special_suggest)
+					    @if($special_suggest->pass=="1")
+                                                <span class="text-primary">
+                                                (已通過)
+                                                </span>
+                                              @elseif($special_suggest->pass=="0")
+                                                <span class="text-danger">
+                                                (未通過)
+                                                </span>
+                                              @endif
+
+					    @else
+						<span class="text-warnning">
+						(未審)
+						</span>
+       					    @endif
                                         @else
                                             <span>
                                                 未傳

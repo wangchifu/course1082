@@ -68,6 +68,9 @@
                                 <td nowrap>
                                     @if($course->special_result==null)
                                         <span class="text-warning">未送審</span>
+				    @endif
+				    @if($course->special_result=="back")
+                                        <span class="text-danger">被退回</span>
                                     @endif
                                     @if($course->special_result=="submit")
                                         <span class="text-primary">已送審</span>
