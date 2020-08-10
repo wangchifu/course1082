@@ -16,7 +16,7 @@
             <th style="vertical-align:text-top;">
                 {{ $special_question->title }}
                 @if($special_review)
-                    123
+                    
                     <form action="{{ route('message') }}" method="post">
                         @csrf
                         <input type="hidden" name="for_user_id" value="{{ $special_review->user_id }}">
