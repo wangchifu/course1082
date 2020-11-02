@@ -1,7 +1,7 @@
 <footer class="py-3 {{ $bg_color }}" id="footer">
     <div class="container">
         <p class="m-0 text-center text-white">
-            Copyright &copy;  2019 彰化縣教育處學管科 <br>
+            Copyright &copy;  2019 ET Wang 保留一切權利<br>
         </p>
     </div>
 </footer>
